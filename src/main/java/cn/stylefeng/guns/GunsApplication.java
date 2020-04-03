@@ -34,6 +34,7 @@ public class GunsApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(GunsApplication.class, args);
+        System.out.println(1);
         logger.info("GunsApplication is success!");
     }
 }
