@@ -1,0 +1,36 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="userId" name="用户id" value="${item.userId}" underline="true"/>
+                            <#input id="userWeixinid" name="微信id" value="${item.userWeixinid}" underline="true"/>
+                            <#input id="userWeixinname" name="微信名" value="${item.userWeixinname}" underline="true"/>
+                            <#input id="userIdentity" name="身份（管理员，普通，专家）" value="${item.userIdentity}" underline="true"/>
+                            <#input id="userIdentitycard" name="身份证号" value="${item.userIdentitycard}" underline="true"/>
+                            <#input id="userBrithday" name="生日" value="${item.userBrithday}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="userCreatetime" name="创建日期" value="${item.userCreatetime}" underline="true"/>
+                            <#input id="userName" name="真是姓名" value="${item.userName}" underline="true"/>
+                            <#input id="userVersion" name="" value="${item.userVersion}" underline="true"/>
+                            <#input id="userIdentitypicturefront" name="身份证正面" value="${item.userIdentitypicturefront}" underline="true"/>
+                            <#input id="userIdentitypictureback" name="身份证反面" value="${item.userIdentitypictureback}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="User1InfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="User1InfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/myself/user1/user1_info.js"></script>
+@}

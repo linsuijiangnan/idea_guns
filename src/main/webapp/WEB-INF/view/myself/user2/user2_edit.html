@@ -1,0 +1,50 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="user2Id" name="用户表2的id" value="${item.user2Id}" underline="true"/>
+                            <#input id="userId" name="用户表的id引用主键ch_user1中的user_id" value="${item.userId}" underline="true"/>
+                            <#input id="userPhoto" name="电话" value="${item.userPhoto}" underline="true"/>
+                            <#input id="userAddressproince" name="省份" value="${item.userAddressproince}" underline="true"/>
+                            <#input id="userAddresscity" name="城市" value="${item.userAddresscity}" underline="true"/>
+                            <#input id="userWorkstart" name="开始工作时间" value="${item.userWorkstart}" underline="true"/>
+                            <#input id="userWorkover" name="结束工作时间" value="${item.userWorkover}" underline="true"/>
+                            <#input id="userIndustrytype" name="职业方向" value="${item.userIndustrytype}" underline="true"/>
+                            <#input id="userIndustry" name="职业" value="${item.userIndustry}" underline="true"/>
+                            <#input id="userWorkstate" name="工作状态（正常非正常）" value="${item.userWorkstate}" underline="true"/>
+                            <#input id="userExperiencecompany" name="工作经历的公司" value="${item.userExperiencecompany}" underline="true"/>
+                            <#input id="userExperienceoccupation" name="工作经历的职业" value="${item.userExperienceoccupation}" underline="true"/>
+                            <#input id="userPrice" name="价格" value="${item.userPrice}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="userIntroduction" name="个人介绍" value="${item.userIntroduction}" underline="true"/>
+                            <#input id="userWorkcontent" name="工作内容" value="${item.userWorkcontent}" underline="true"/>
+                            <#input id="userWorkpicture" name="工作内容图片" value="${item.userWorkpicture}" underline="true"/>
+                            <#input id="addwork" name="添加工作内容id引用other_addwork表中的addwork_id" value="${item.addwork}" underline="true"/>
+                            <#input id="userAddress" name="常住地址" value="${item.userAddress}" underline="true"/>
+                            <#input id="userName" name="姓名" value="${item.userName}" underline="true"/>
+                            <#input id="userAlipayuser" name="支付宝账号" value="${item.userAlipayuser}" underline="true"/>
+                            <#input id="userAlipaypass" name="支付宝密码" value="${item.userAlipaypass}" underline="true"/>
+                            <#input id="userScore" name="评分" value="${item.userScore}" underline="true"/>
+                            <#input id="userPicture" name="照片" value="${item.userPicture}" underline="true"/>
+                            <#input id="userCommentnumber" name="评论数" value="${item.userCommentnumber}" underline="true"/>
+                            <#input id="userRemake" name="可用" value="${item.userRemake}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="User2InfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="User2InfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/myself/user2/user2_info.js"></script>
+@}

@@ -1,0 +1,28 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="industryId" name="行业id" value="${item.industryId}" underline="true"/>
+                            <#input id="industryDirection" name="行业方向" value="${item.industryDirection}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="industryType" name="行业类型" value="${item.industryType}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="IndustryInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="IndustryInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/myself/industry/industry_info.js"></script>
+@}

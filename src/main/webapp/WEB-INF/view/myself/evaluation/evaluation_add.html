@@ -1,0 +1,31 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="evaluationId" name="评价表主键100开始递增" underline="true"/>
+                            <#input id="evaluationExpertsid" name="专家id" underline="true"/>
+                            <#input id="evaluationUserid" name="用户id"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="evaluationContent" name="评价内容" underline="true"/>
+                            <#input id="evaluationTime" name="评价时间" underline="true"/>
+                            <#input id="evaluationRemake" name="" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="EvaluationInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="EvaluationInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/myself/evaluation/evaluation_info.js"></script>
+@}

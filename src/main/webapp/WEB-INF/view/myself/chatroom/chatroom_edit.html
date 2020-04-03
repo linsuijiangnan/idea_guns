@@ -1,0 +1,30 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="chatroomId" name="聊天室主键100开始递增" value="${item.chatroomId}" underline="true"/>
+                            <#input id="chatroomExpertsid" name="专家id" value="${item.chatroomExpertsid}" underline="true"/>
+                            <#input id="chatroomUserid" name="" value="${item.chatroomUserid}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="chatroomTime" name="聊天有效时间" value="${item.chatroomTime}" underline="true"/>
+                            <#input id="chartroomRemake" name="" value="${item.chartroomRemake}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ChatroomInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ChatroomInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/myself/chatroom/chatroom_info.js"></script>
+@}

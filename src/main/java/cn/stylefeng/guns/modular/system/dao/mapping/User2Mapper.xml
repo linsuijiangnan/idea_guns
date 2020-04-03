@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.system.dao.User2Mapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.system.model.User2">
+        <id column="user2_id" property="user2Id" />
+        <result column="user_id" property="userId" />
+        <result column="user_photo" property="userPhoto" />
+        <result column="user_addressproince" property="userAddressproince" />
+        <result column="user_addresscity" property="userAddresscity" />
+        <result column="user_workstart" property="userWorkstart" />
+        <result column="user_workover" property="userWorkover" />
+        <result column="user_industrytype" property="userIndustrytype" />
+        <result column="user_industry" property="userIndustry" />
+        <result column="user_workstate" property="userWorkstate" />
+        <result column="user_experiencecompany" property="userExperiencecompany" />
+        <result column="user_experienceoccupation" property="userExperienceoccupation" />
+        <result column="user_price" property="userPrice" />
+        <result column="user_introduction" property="userIntroduction" />
+        <result column="user_workcontent" property="userWorkcontent" />
+        <result column="user_workpicture" property="userWorkpicture" />
+        <result column="addwork_" property="addwork" />
+        <result column="user_address" property="userAddress" />
+        <result column="user_name" property="userName" />
+        <result column="user_alipayuser" property="userAlipayuser" />
+        <result column="user_alipaypass" property="userAlipaypass" />
+        <result column="user_score" property="userScore" />
+        <result column="user_picture" property="userPicture" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user2_id, user_id, user_photo, user_addressproince, user_addresscity, user_workstart, user_workover, user_industrytype, user_industry, user_workstate, user_experiencecompany, user_experienceoccupation, user_price, user_introduction, user_workcontent, user_workpicture, addwork_, user_address, user_name, user_alipayuser, user_alipaypass, user_score, user_picture
+    </sql>
+    
+    <!-- 职业类型 -->
+	<select id="scoreall"  resultType="map" >
+	select user2_id,user_id,user_introduction 个人介绍 ,user_industrytype 职业方向,user_industry 职业类型,
+		user_name 昵称,user_score 评价,user_picture 照片 from other_user2 where "1"="1"
+		<if test="user_industry !=null">
+			 user_industry = #{user_industry}
+		</if>
+		<if test="user_industrytype!=null">
+			and user_industrytype = #{user_industrytype}
+		</if>
+		order by user_score
+	</select>
+	<!-- 查询地方省会 -->
+	<select id="addressproince"  resultType="map" >
+		select user_addressproince from other_user2 
+	</select>
+	<!-- 查询条件筛选 -->
+	<select id="screen"  resultType="map" >
+		select b.user_name 专家姓名, a.user_id 专家id,user_picture 专家图片,user_industry 专家职业方向,user_industrytype 专家职业方向类型,
+		user_price 专家价格,user_score 专家评分,user_commentnumber 专家评论数 
+		from other_user2 a,ch_user1 b where a.user_id=b.user_id
+		<if test="user_industry!='' and user_industry!=null">
+			and user_industry = #{user_industry}
+		</if>
+		<if test="user_industrytype!='' and user_industrytype!=null">
+			and user_industrytype = #{user_industrytype}
+		</if>
+		<if test="user_addressproince!='' and user_addressproince!=null">
+			and user_addressproince = #{user_addressproince}
+		</if>
+		<if test="expertsname!='' and expertsname!=null">
+			and b.user_name = #{expertsname}
+		</if>
+		<choose>
+			<when test="orderByField != null and orderByField !=''">
+				<choose>
+					<when test="isAsc == true">
+						order by user_${orderByField} ASC
+					</when>
+					<otherwise>
+						order by user_${orderByField} DESC
+					</otherwise>
+				</choose>
+			</when>
+		</choose>
+		
+	</select>
+	
+	<select id="xiangxi"  resultType="map" >
+		select user_introduction 个人介绍 
+		from other_user2 where 1=1
+		<if test="expertsid !='' and expertsid !=null">
+			and user_id =#{expertsid}
+			
+		</if>
+		
+	</select>
+	<select id="getlist"  resultType="map" >
+		select b.user_name, a.user_id,user_picture,user_industry,user_industrytype,user_price,user_score,user_commentnumber 
+		from other_user2 a,ch_user1 b where a.user_id=b.user_id
+		
+	</select>
+</mapper>
+
+
+
+
+
+
+

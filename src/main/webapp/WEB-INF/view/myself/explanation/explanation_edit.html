@@ -1,0 +1,29 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="explanationId" name="用户id" value="${item.explanationId}" underline="true"/>
+                            <#input id="userId" name="引用ch_user表中的user_id" value="${item.userId}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="explanationDriection" name="解决问题的行业方向" value="${item.explanationDriection}" underline="true"/>
+                            <#input id="explanationType" name="类型" value="${item.explanationType}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ExplanationInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ExplanationInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/myself/explanation/explanation_info.js"></script>
+@}

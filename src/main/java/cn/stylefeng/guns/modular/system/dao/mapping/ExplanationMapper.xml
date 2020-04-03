@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.system.dao.ExplanationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.system.model.Explanation">
+        <id column="explanation_id" property="explanationId" />
+        <result column="user_id" property="userId" />
+        <result column="explanation_driection" property="explanationDriection" />
+        <result column="explanation_type" property="explanationType" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        explanation_id, user_id, explanation_driection, explanation_type
+    </sql>
+
+</mapper>

@@ -1,0 +1,30 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="chatrecordId" name="聊天内容的id，自动递增从100开始" value="${item.chatrecordId}" underline="true"/>
+                            <#input id="chatroomId" name="聊天室的id可以和chatroom主外键" value="${item.chatroomId}" underline="true"/>
+                            <#input id="chatrecordTime" name="聊天时间" value="${item.chatrecordTime}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="chatrecordContent" name="聊天内容" value="${item.chatrecordContent}" underline="true"/>
+                            <#input id="chatrecordRemake" name="" value="${item.chatrecordRemake}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ChatrecordInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ChatrecordInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/myself/chatrecord/chatrecord_info.js"></script>
+@}
